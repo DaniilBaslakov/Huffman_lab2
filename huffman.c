@@ -129,4 +129,27 @@ void    encode(hlTable *table, char *stringToEncode)
     }
     printf("\n");
 }
-void    decode(htTree *tree, char *stringToDecode);
+
+void    decode(htTree *tree, char *stringToDecode)
+{
+    htNode  *node;
+    int     i;
+
+    node = tree->root;
+    i = 0;
+    printf("\nDecoding string:\n%s\n", stringToDecode);
+    while (stringToDecode[i])
+    {
+        if (stringToDecode[i] == '0')
+            node = node->left;
+        if (stringToDecode[i] == '1')
+            node = node->right;
+        if (node->symbol)
+        {
+            putchar(node->symbol);
+            node = tree->root;
+        } 
+        i++;
+    }
+    putchar('\n');
+}
