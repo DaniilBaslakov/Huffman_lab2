@@ -17,5 +17,6 @@ int     main(int argc, char **argv)
     tree = buildTree(str);
     codeTable = buildTable(tree);
     encode(codeTable, str);
+    decode(tree, "110111000101001111111010010010000110111010");
     return (0);
 }

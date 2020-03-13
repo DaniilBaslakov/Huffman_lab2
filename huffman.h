@@ -34,6 +34,6 @@ typedef struct  _hlTable
 htTree* buildTree(char *inputString);
 hlTable* buildTable(htTree *huffmanTree);
 void encode(hlTable *table, char *stringToEncode);
-//void decode(htTree *tree, char *stringToDecode);
+void decode(htTree *tree, char *stringToDecode);
 
 #endif
