@@ -80,7 +80,7 @@ htTree*     buildTree(char *inputString)
         node->left = NULL;
         node->right = NULL;
         node->symbol = s_symbol.symb[i];
-        printf("\n[symb: %c]\n",node->symbol);
+        printf("\n[symb: %c]\n", node->symbol);
         addPQueue(&huffmanQueue, node, s_symbol.freq[i]);
         i++;
     }
@@ -112,7 +112,7 @@ htTree*     buildTree(char *inputString)
     return (tree);
 }
 
-void encode(hlTable *table, char *stringToEncode)
+void    encode(hlTable *table, char *stringToEncode)
 {
     hlNode *node;
     int i;
@@ -122,10 +122,11 @@ void encode(hlTable *table, char *stringToEncode)
     while (stringToEncode[i])
     {
         node = table->first;
-        while(node->symbol != stringToEncode[i])
+        while (node->symbol != stringToEncode[i])
 			node = node->next;
 		printf("%s", node->code);
         i++;
     }
     printf("\n");
 }
+void    decode(htTree *tree, char *stringToDecode);
