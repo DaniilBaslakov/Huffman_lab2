@@ -1,4 +1,4 @@
-NAME = test1
+NAME = run
 FLAGS = -Wall -Wextra -Werror
 SRC = *.c
 OBJ = *.o
