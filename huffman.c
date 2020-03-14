@@ -96,7 +96,7 @@ htTree*     buildTree(char *inputString)
 
         priority = huffmanQueue->first->priority;
         priority += huffmanQueue->first->next->priority;
-        printf("\n[prioritty: %d]\n", priority);
+        //printf("\n[prioritty: %d]\n", priority);
         left = getPQueue(&huffmanQueue);
         right = getPQueue(&huffmanQueue);
 
@@ -116,7 +116,9 @@ void    encode(hlTable *table, char *stringToEncode)
 {
     hlNode *node;
     int i;
-
+    int count;
+    
+    count = 0;
     i = 0;
     printf("\nEncoding\nInput string: %s\nEncoded string: \n", stringToEncode);
     while (stringToEncode[i])
@@ -125,9 +127,12 @@ void    encode(hlTable *table, char *stringToEncode)
         while (node->symbol != stringToEncode[i])
 			node = node->next;
 		printf("%s", node->code);
+        count = count + strlen(node->code);
         i++;
     }
     printf("\n");
+    printf("bit huffman: %d\n", count);
+    
 }
 
 void    decode(htTree *tree, char *stringToDecode)
