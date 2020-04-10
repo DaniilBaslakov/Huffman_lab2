@@ -48,5 +48,6 @@ void    fill_arr(char *str, int *un)
         }
         count++;
     }
+    s_symbol.un = *un;
     s_symbol.symb[i + 1] = '\0';
 }

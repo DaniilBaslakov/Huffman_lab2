@@ -87,10 +87,10 @@ htTree*     buildTree(char *inputString)
 
     while (huffmanQueue->size != 1)
     {
-        int priority;
-        htNode *left;
-        htNode *right;
-        htNode *newNode;
+        int     priority;
+        htNode  *left;
+        htNode  *right;
+        htNode  *newNode;
 
         newNode = (htNode*)malloc(sizeof(htNode));
 
@@ -114,9 +114,9 @@ htTree*     buildTree(char *inputString)
 
 void    encode(hlTable *table, char *stringToEncode)
 {
-    hlNode *node;
-    int i;
-    int count;
+    hlNode  *node;
+    int     i;
+    int     count;
     
     count = 0;
     i = 0;
